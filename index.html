@@ -16,8 +16,13 @@
     <a href="#apps-category">Apps</a>
   </nav>
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterGames()">
-    <button onclick="filterGames()">
+    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterContent()">
+    <select id="categoryFilter" onchange="filterContent()">
+      <option value="all">Todos</option>
+      <option value="jogos">Jogos</option>
+      <option value="apps">Apps</option>
+    </select>
+    <button onclick="filterContent()">
       <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar">
     </button>
   </div>
@@ -26,7 +31,7 @@
 <main>
   <section id="games-category">
     <h2 class="category-title">Jogos</h2>
-    <div class="game-grid">
+    <div class="game-grid" id="games-grid">
       <div class="game-card" data-category="jogos">
         <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers">
         <h2>SUBWAY SURFERS</h2>
@@ -44,12 +49,12 @@
 
   <section id="apps-category">
     <h2 class="category-title">Apps</h2>
-    <div class="game-grid">
+    <div class="game-grid" id="apps-grid">
       <div class="game-card" data-category="apps">
-        <img src=https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp alt="App Exemplo">
+        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="App Exemplo">
         <h2>RIMUSIC</h2>
         <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
-        <a class="download-btn" href=https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk target="_blank">Baixar</a>
+        <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
       </div>
     </div>
   </section>
@@ -57,17 +62,21 @@
 
 <footer>
   <p>© 2025 PLAY CRACKZ — Todos os direitos reservados.</p>
-  
+</footer>
+
 <script>
-function filterGames() {
+function filterContent() {
   const input = document.getElementById('searchInput').value.toLowerCase();
+  const category = document.getElementById('categoryFilter').value;
   const cards = document.querySelectorAll('.game-card');
 
   cards.forEach(card => {
     const title = card.querySelector('h2').textContent.toLowerCase();
     const description = card.querySelector('p').textContent.toLowerCase();
-    const show = title.includes(input) || description.includes(input);
-    card.style.display = show ? 'block' : 'none';
+    const cardCategory = card.getAttribute('data-category');
+    const matchesSearch = title.includes(input) || description.includes(input);
+    const matchesCategory = (category === 'all' || cardCategory === category);
+    card.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
   });
 }
 </script>
