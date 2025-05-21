@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -24,20 +25,39 @@
     <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers">
     <h1>Subway Surfers</h1>
   </div>
-
-  <p>BAIXE SUBWAY SURFERS AGORA!
-Tudo desbloqueado, dinheiro infinito e sem anúncios.
-Rápido, seguro e 100% funcional!</p>
-
+  <p>BAIXE SUBWAY SURFERS AGORA! Tudo desbloqueado, dinheiro infinito e sem anúncios. Rápido, seguro e 100% funcional!</p>
   <div class="screenshots">
     <img src="https://play-lh.googleusercontent.com/RTZy9CY_unsiAUXzq3w31t7JrRGtno41N9yAbMzofiXXQj_XhopGwc0FCII2fI-p4A=w1052-h592-rw" alt="Screenshot 1">
     <img src="https://play-lh.googleusercontent.com/W_MtmtiKx-Oaa6s2IMCOpDMkmF9H5x6J0V2I_1-lymfzUqbQAz6Bm0ITX5sB0e_TmLc=w1052-h592-rw" alt="Screenshot 2">
-    <img src="https://play-lh.googleusercontent.com/DCXX6tXzOCfPiYzZ1aBmBSJWjMI1J5go9MPzL1QQC-gpZC4C335jAcBwLKmTTyGCW5A=w1052-h592-rw" alt="Screenshot 3">
-    <img src="https://play-lh.googleusercontent.com/SAZGmYgdJjos4bkNapniv3AE3MYbe2n1Tzj4u8w471DWAb2ePhvbD_TvYryV8379jDw=w1052-h592-rw" alt="Screenshot 4">
   </div>
-
   <div class="download">
-    <a href=https://drive.google.com/file/d/1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW/view?usp=drivesdk target="_blank">Baixar Aqui !!</a>
+    <a href="https://drive.google.com/file/d/1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW/view?usp=drivesdk" target="_blank">Baixar Aqui !!</a>
+  </div>
+  <div class="comments">
+    <h3>Comentários</h3>
+    <div class="comment"><img src="https://i.pravatar.cc/40?img=3"><div><strong>Lucas</strong><p>Top demais! Tudo desbloqueado mesmo!</p></div></div>
+    <div class="comment"><img src="https://i.pravatar.cc/40?img=5"><div><strong>Maria</strong><p>Jogo tá rodando liso no meu celular. Valeu!</p></div></div>
+  </div>
+</div>
+
+<!-- JOGO 2 -->
+<div class="game-box">
+  <div class="game-header">
+    <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami">
+    <h1>Zombie Tsunami</h1>
+  </div>
+  <p>BAIXE ZOMBIE TSUNAMI! Tudo desbloqueado, moedas infinitas e sem anúncios. Rápido, seguro e 100% funcional!</p>
+  <div class="screenshots">
+    <img src="https://play-lh.googleusercontent.com/9xUnGdQgJI5DQj7VBuf9O14Lw_A2uaWswIUkB747F_-g9u5RJpzoOjSFLz-qqa_WLcYH=w1052-h592-rw" alt="Screenshot 1">
+    <img src="https://play-lh.googleusercontent.com/T5-GfrRbKAsUGMiSoMAjTEsducnLbkRMwMlfVjFIg5Ev5Zcsk6DZxqf8vI7Z9hkXlQ=w1052-h592-rw" alt="Screenshot 2">
+  </div>
+  <div class="download">
+    <a href="https://drive.google.com/file/d/14is_lU-0dJu0VvEzDmtj1WSJpVr_M5U2/view?usp=drivesdk" target="_blank">Baixar Aqui !!</a>
+  </div>
+  <div class="comments">
+    <h3>Comentários</h3>
+    <div class="comment"><img src="https://i.pravatar.cc/40?img=9"><div><strong>Joana</strong><p>Melhor versão já baixada, sem anúncios chatos.</p></div></div>
+    <div class="comment"><img src="https://i.pravatar.cc/40?img=12"><div><strong>Carlos</strong><p>Funciona direitinho. Muito obrigado!</p></div></div>
   </div>
 </div>
 
@@ -45,38 +65,13 @@ Rápido, seguro e 100% funcional!</p>
   function filterGames() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const games = document.querySelectorAll('.game-box');
-
     games.forEach(game => {
       const title = game.querySelector('h1').textContent.toLowerCase();
       const description = game.querySelector('p').textContent.toLowerCase();
-      const shouldShow = title.includes(input) || description.includes(input);
-      game.style.display = shouldShow ? 'block' : 'none';
+      game.style.display = title.includes(input) || description.includes(input) ? 'block' : 'none';
     });
   }
 </script>
 
 </body>
 </html>
-
-<!-- JOGO 2 -->
-<div class="game-box">
-  <div class="game-header">
-    <img src=https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200>
-    <h1>Zombie Tsunami</h1>
-  </div>
-
-  <p>BAIXE ZOMBIE TSUNAMI!
-Tudo desbloqueado, moedas infinitas e sem anúncios.
-Rápido, seguro e 100% funcional!</p>
-
-  <div class="screenshots">
-    <img src=https://play-lh.googleusercontent.com/9xUnGdQgJI5DQj7VBuf9O14Lw_A2uaWswIUkB747F_-g9u5RJpzoOjSFLz-qqa_WLcYH=w1052-h592-rw alt="Screenshot 1">
-    <img src=https://play-lh.googleusercontent.com/T5-GfrRbKAsUGMiSoMAjTEsducnLbkRMwMlfVjFIg5Ev5Zcsk6DZxqf8vI7Z9hkXlQ=w1052-h592-rw alt="Screenshot 2">
-    <img src=https://play-lh.googleusercontent.com/y0pNjLcEpFjJXo2WZcAzGkz51I9fOn5H4wtVyv5SU0nyxIsYBoqe6MfeNi0xK1DRDJY=w1052-h592-rw alt="Screenshot 3">
-    <img src=https://play-lh.googleusercontent.com/sx38Onyn7IJ2-4wNliOtag0b-D54cXf6o1mITKy5mAKJ3_ai-GyO2127dcfS2eo0ZA=w1052-h592-rw alt="Screenshot 4">
-  </div>
-
-  <div class="download">
-    <a href=https://drive.google.com/file/d/14is_lU-0dJu0VvEzDmtj1WSJpVr_M5U2/view?usp=drivesdk target="_blank">Baixar Aqui !!</a>
-  </div>
-</div>
