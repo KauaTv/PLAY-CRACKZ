@@ -57,7 +57,8 @@ header {
   gap: 10px;
 }
 
-.search-box input {
+.search-box input,
+.search-box select {
   padding: 12px;
   border-radius: 8px;
   border: none;
