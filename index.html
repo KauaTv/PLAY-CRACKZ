@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PLAY CRACKZ</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
 <header>
   <h1 class="site-title">PLAY CRACKZ</h1>
   <nav class="menu">
-    <a href="#games-category">Jogos</a>
-    <a href="#apps-category">Apps</a>
+    <a href="#" onclick="showTab('games')">Jogos</a>
+    <a href="#" onclick="showTab('apps')">Apps</a>
   </nav>
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterGames()">
@@ -24,7 +24,7 @@
 </header>
 
 <main>
-  <section id="games-category">
+  <section id="games-category" class="tab-content">
     <h2 class="category-title">Jogos</h2>
     <div class="game-grid">
       <div class="game-card" data-category="jogos">
@@ -42,13 +42,11 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <section id="apps-category">
+  <section id="apps-category" class="tab-content" style="display:none;">
     <h2 class="category-title">Apps</h2>
     <div class="game-grid">
       <div class="game-card" data-category="apps">
-        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="App Exemplo">
+        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="RiMusic">
         <h2>RIMUSIC</h2>
         <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
         <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
@@ -62,9 +60,14 @@
 </footer>
 
 <script>
+function showTab(tab) {
+  document.getElementById('games-category').style.display = tab === 'games' ? 'block' : 'none';
+  document.getElementById('apps-category').style.display = tab === 'apps' ? 'block' : 'none';
+}
+
 function filterGames() {
   const input = document.getElementById('searchInput').value.toLowerCase();
-  const cards = document.querySelectorAll('.game-card');
+  const cards = document.querySelectorAll('.tab-content:visible .game-card');
 
   cards.forEach(card => {
     const title = card.querySelector('h2').textContent.toLowerCase();
