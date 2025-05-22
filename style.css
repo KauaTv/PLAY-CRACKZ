@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -34,18 +35,20 @@ header {
   margin-top: 15px;
 }
 
-.menu a {
+.menu button {
+  background: none;
+  border: 2px solid #28a745;
   color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
+  padding: 6px 12px;
+  margin: 0 10px;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 16px;
-  padding: 6px 12px;
-  border-radius: 6px;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
-.menu a:hover {
+.menu button:hover {
   background: #28a745;
 }
 
@@ -77,6 +80,14 @@ header {
   width: 20px;
   height: 20px;
   filter: invert(1);
+}
+
+.category-section {
+  display: none;
+}
+
+.category-section.active {
+  display: block;
 }
 
 .game-grid {
