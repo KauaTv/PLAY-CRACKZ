@@ -13,8 +13,8 @@
 <header>
   <h1 class="site-title">PLAY CRACKZ</h1>
   <nav class="menu">
-    <a href="#" onclick="showCategory('games')">Jogos</a>
-    <a href="#" onclick="showCategory('apps')">Apps</a>
+    <a href="#games-category" onclick="showCategory('games')">Jogos</a>
+    <a href="#apps-category" onclick="showCategory('apps')">Apps</a>
   </nav>
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterGames()">
@@ -25,40 +25,26 @@
 </header>
 
 <main>
-  <section id="games-category">
+  <section id="games-category" class="category-section">
     <h2 class="category-title">Jogos</h2>
     <div class="game-grid">
       <div class="game-card" data-category="jogos">
         <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers">
         <h2>SUBWAY SURFERS</h2>
-        <p>Corra como nunca antes! Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
-        <a class="download-btn" href=https://drive.google.com/file/d/1R2bJnPMkHv-JnIzJmUJKxP9ZS8zgrRw0/view?usp=drivesdk target="_blank">Baixar</a>
+        <p>Com moedas e chaves infinitas, todos os personagens liberados e sem anúncios.</p>
+        <a class="download-btn" href="apks/subway-surfers.apk" download>Baixar</a>
       </div>
-      <div class="game-card" data-category="jogos">
-        <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami">
-        <h2>ZOMBIE TSUNAMI</h2>
-        <p>Recursos infinitos, todos os bônus insanos desbloqueados e nenhuma interrupção. Conduza sua horda de zumbis!</p>
-        <a class="download-btn" href="https://drive.google.com/file/d/1_gO1Ai_vwwYAPdtddnv3-RhaeCZjXRyB/view?usp=drivesdk" target="_blank">Baixar</a>
-      </div>
-
-<div class="game-card" data-category="jogos">
-        <img src=https://play-lh.googleusercontent.com/orKIEE8HVueEHzaq1P9GEI-MbTJh5jkcRZnWUrHJoKrzMPzrSzYPY625sweqsWOSZHs=w480-h960-rw>
-        <h2>PLANTS VS ZOMBIES 2</h2>
-        <p>Lute como nunca antes! Com gemas e moedas infinitas, todas as plantas desbloqueadas, upgrades no máximo e zero anúncios para atrapalhar!</p>
-        <a class="download-btn" href=https://drive.google.com/file/d/1R2bJnPMkHv-JnIzJmUJKxP9ZS8zgrRw0/view?pli=1 target="_blank">Baixar</a>
-      </div>
-
-</div>
+    </div>
   </section>
 
-  <section id="apps-category" style="display:none;">
+  <section id="apps-category" class="category-section" style="display:none;">
     <h2 class="category-title">Apps</h2>
     <div class="game-grid">
       <div class="game-card" data-category="apps">
-        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="App Exemplo">
+        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="RiMusic">
         <h2>RIMUSIC</h2>
-        <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
-        <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
+        <p>Reproduza músicas do YouTube Music com este app gratuito.</p>
+        <a class="download-btn" href="apks/rimusic.apk" download>Baixar</a>
       </div>
     </div>
   </section>
@@ -71,9 +57,7 @@
 <script>
 function filterGames() {
   const input = document.getElementById('searchInput').value.toLowerCase();
-  const visibleSection = document.querySelector('section:not([style*="display: none"])');
-  const cards = visibleSection.querySelectorAll('.game-card');
-
+  const cards = document.querySelectorAll('.game-card');
   cards.forEach(card => {
     const title = card.querySelector('h2').textContent.toLowerCase();
     const description = card.querySelector('p').textContent.toLowerCase();
@@ -83,11 +67,9 @@ function filterGames() {
 }
 
 function showCategory(category) {
-  document.getElementById('games-category').style.display = category === 'games' ? 'block' : 'none';
-  document.getElementById('apps-category').style.display = category === 'apps' ? 'block' : 'none';
-  filterGames(); // Refresh search results when switching
+  document.getElementById("games-category").style.display = category === 'games' ? 'block' : 'none';
+  document.getElementById("apps-category").style.display = category === 'apps' ? 'block' : 'none';
 }
 </script>
-
 </body>
 </html>
