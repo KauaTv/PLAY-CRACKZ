@@ -1,14 +1,17 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #f7f7f7;
   color: #333;
   padding: 20px;
 }
+
 header {
   background: #1e1e2f;
   color: white;
@@ -18,6 +21,7 @@ header {
   margin-bottom: 30px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.25);
 }
+
 .site-title {
   font-size: 48px;
   font-weight: 800;
@@ -26,9 +30,11 @@ header {
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
+
 .menu {
   margin-top: 15px;
 }
+
 .menu a {
   color: #fff;
   text-decoration: none;
@@ -39,9 +45,11 @@ header {
   border-radius: 6px;
   transition: background 0.3s;
 }
+
 .menu a:hover {
   background: #28a745;
 }
+
 .search-box {
   margin-top: 20px;
   display: flex;
@@ -49,6 +57,7 @@ header {
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .search-box input {
   padding: 12px;
   border-radius: 8px;
@@ -56,6 +65,7 @@ header {
   width: 250px;
   font-size: 16px;
 }
+
 .search-box button {
   padding: 12px;
   border: none;
@@ -63,16 +73,19 @@ header {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .search-box button img {
   width: 20px;
   height: 20px;
   filter: invert(1);
 }
+
 .game-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
+
 .game-card {
   background: white;
   border-radius: 12px;
@@ -81,9 +94,11 @@ header {
   text-align: center;
   transition: transform 0.2s;
 }
+
 .game-card:hover {
   transform: translateY(-5px);
 }
+
 .game-card img {
   width: 100px;
   height: 100px;
@@ -91,6 +106,7 @@ header {
   margin-bottom: 15px;
   border-radius: 10px;
 }
+
 .download-btn {
   display: inline-block;
   margin-top: 10px;
@@ -101,9 +117,11 @@ header {
   text-decoration: none;
   transition: background 0.3s;
 }
+
 .download-btn:hover {
   background: #218838;
 }
+
 .category-title {
   font-size: 28px;
   margin-bottom: 20px;
@@ -111,7 +129,14 @@ header {
   color: #1e1e2f;
   text-align: center;
   font-weight: 600;
+  border: 2px solid #28a745;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 footer {
   margin-top: 60px;
   background: #1e1e2f;
