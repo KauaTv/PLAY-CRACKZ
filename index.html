@@ -1,54 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PLAY CRACKZ</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
 <header>
   <h1 class="site-title">PLAY CRACKZ</h1>
   <nav class="menu">
-    <a href="#games-category" onclick="showTab('games')">Jogos</a>
-    <a href="#apps-category" onclick="showTab('apps')">Apps</a>
+    <button onclick="showCategory('games')">Jogos</button>
+    <button onclick="showCategory('apps')">Apps</button>
   </nav>
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterCards()">
-    <button onclick="filterCards()">
-      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar">
+    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterContent()" />
+    <button onclick="filterContent()">
+      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar"/>
     </button>
   </div>
 </header>
 
 <main>
-  <section id="games-category" class="tab-content">
+  <section id="games-category" class="category-section active">
     <h2 class="category-title">Jogos</h2>
     <div class="game-grid">
       <div class="game-card" data-category="jogos">
-        <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers">
+        <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers"/>
         <h2>SUBWAY SURFERS</h2>
-        <p>Corra como nunca antes! Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
+        <p>Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
         <a class="download-btn" href="https://drive.google.com/file/d/1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW/view?usp=drivesdk" target="_blank">Baixar</a>
       </div>
       <div class="game-card" data-category="jogos">
-        <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami">
+        <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami"/>
         <h2>ZOMBIE TSUNAMI</h2>
-        <p>Recursos infinitos, todos os bônus insanos desbloqueados e nenhuma interrupção. Conduza sua horda de zumbis!</p>
+        <p>Recursos infinitos, todos os bônus desbloqueados. Conduza sua horda de zumbis!</p>
         <a class="download-btn" href="https://drive.google.com/file/d/1_gO1Ai_vwwYAPdtddnv3-RhaeCZjXRyB/view?usp=drivesdk" target="_blank">Baixar</a>
       </div>
     </div>
   </section>
 
-  <section id="apps-category" class="tab-content" style="display:none;">
+  <section id="apps-category" class="category-section">
     <h2 class="category-title">Apps</h2>
     <div class="game-grid">
       <div class="game-card" data-category="apps">
-        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="App Exemplo">
+        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="RiMusic"/>
         <h2>RIMUSIC</h2>
-        <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
+        <p>Reprodutor de música gratuito do YouTube Music! Ouça suas músicas favoritas sem limites.</p>
         <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
       </div>
     </div>
@@ -60,19 +61,23 @@
 </footer>
 
 <script>
-function showTab(tab) {
-  document.getElementById('games-category').style.display = tab === 'games' ? 'block' : 'none';
-  document.getElementById('apps-category').style.display = tab === 'apps' ? 'block' : 'none';
-  filterCards(); // atualiza resultados ao trocar de aba
+function showCategory(cat) {
+  document.querySelectorAll('.category-section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(cat + '-category').classList.add('active');
+  document.getElementById('searchInput').value = '';
+  filterContent();
 }
 
-function filterCards() {
+function filterContent() {
   const input = document.getElementById('searchInput').value.toLowerCase();
-  const visibleCards = document.querySelectorAll('.tab-content:not([style*="display: none"]) .game-card');
-  visibleCards.forEach(card => {
+  const activeSection = document.querySelector('.category-section.active');
+  const cards = activeSection.querySelectorAll('.game-card');
+
+  cards.forEach(card => {
     const title = card.querySelector('h2').textContent.toLowerCase();
-    const description = card.querySelector('p').textContent.toLowerCase();
-    card.style.display = (title.includes(input) || description.includes(input)) ? 'block' : 'none';
+    const desc = card.querySelector('p').textContent.toLowerCase();
+    const show = title.includes(input) || desc.includes(input);
+    card.style.display = show ? 'block' : 'none';
   });
 }
 </script>
@@ -80,6 +85,11 @@ function filterCards() {
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.onLoad = function(){
+  Tawk_API.setAttributes({
+    'language' : 'pt'
+  }, function(error){});
+};
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
