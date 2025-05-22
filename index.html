@@ -1,41 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PLAY CRACKZ</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
-
 <header>
   <h1 class="site-title">PLAY CRACKZ</h1>
   <nav class="menu">
-    <a href="#" onclick="showTab('games')">Jogos</a>
-    <a href="#" onclick="showTab('apps')">Apps</a>
+    <a href="#" onclick="showCategory('games')">Jogos</a>
+    <a href="#" onclick="showCategory('apps')">Apps</a>
   </nav>
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterItems()" />
-    <button onclick="filterItems()">
-      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar" />
+    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterContent()"/>
+    <button onclick="filterContent()">
+      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar"/>
     </button>
   </div>
 </header>
 
 <main>
-  <section id="games-category" class="tab-section">
+  <section id="games-category" class="category-section">
     <h2 class="category-title">Jogos</h2>
     <div class="game-grid">
       <div class="game-card" data-category="jogos">
-        <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers" />
+        <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers"/>
         <h2>SUBWAY SURFERS</h2>
         <p>Corra como nunca antes! Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
         <a class="download-btn" href="https://drive.google.com/file/d/1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW/view?usp=drivesdk" target="_blank">Baixar</a>
       </div>
       <div class="game-card" data-category="jogos">
-        <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami" />
+        <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami"/>
         <h2>ZOMBIE TSUNAMI</h2>
         <p>Recursos infinitos, todos os bônus insanos desbloqueados e nenhuma interrupção. Conduza sua horda de zumbis!</p>
         <a class="download-btn" href="https://drive.google.com/file/d/1_gO1Ai_vwwYAPdtddnv3-RhaeCZjXRyB/view?usp=drivesdk" target="_blank">Baixar</a>
@@ -43,13 +41,13 @@
     </div>
   </section>
 
-  <section id="apps-category" class="tab-section" style="display: none;">
+  <section id="apps-category" class="category-section" style="display: none;">
     <h2 class="category-title">Apps</h2>
     <div class="game-grid">
       <div class="game-card" data-category="apps">
-        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="RiMusic" />
+        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="RiMusic"/>
         <h2>RIMUSIC</h2>
-        <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music!</p>
+        <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
         <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
       </div>
     </div>
@@ -61,32 +59,24 @@
 </footer>
 
 <script>
-function showTab(tab) {
-  document.getElementById('games-category').style.display = tab === 'games' ? 'block' : 'none';
-  document.getElementById('apps-category').style.display = tab === 'apps' ? 'block' : 'none';
+function showCategory(category) {
+  document.getElementById("games-category").style.display = category === "games" ? "block" : "none";
+  document.getElementById("apps-category").style.display = category === "apps" ? "block" : "none";
+  document.getElementById("searchInput").value = "";
+  filterContent();
 }
 
-function filterItems() {
+function filterContent() {
   const input = document.getElementById('searchInput').value.toLowerCase();
-  const visibleTab = document.querySelector('.tab-section:not([style*="display: none"])');
-  const cards = visibleTab.querySelectorAll('.game-card');
+  const visibleSection = document.querySelector('.category-section:not([style*="display: none"])');
+  const cards = visibleSection.querySelectorAll('.game-card');
 
   cards.forEach(card => {
     const title = card.querySelector('h2').textContent.toLowerCase();
     const description = card.querySelector('p').textContent.toLowerCase();
-    const show = title.includes(input) || description.includes(input);
-    card.style.display = show ? 'block' : 'none';
+    card.style.display = (title.includes(input) || description.includes(input)) ? 'block' : 'none';
   });
 }
 </script>
-
-<!-- Crisp Chat -->
-<script type="text/javascript"> 
-window.$crisp=[];window.CRISP_WEBSITE_ID="7e1261cd-0d5d-4ce2-ab02-3403fff5d77a"; 
-(function(){d=document;s=d.createElement("script"); 
-s.src="https://client.crisp.chat/l.js";s.async=1; 
-d.getElementsByTagName("head")[0].appendChild(s);})(); 
-</script>
-
 </body>
 </html>
