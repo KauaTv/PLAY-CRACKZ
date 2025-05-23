@@ -25,7 +25,6 @@ header {
 .site-title {
   font-size: 48px;
   font-weight: 800;
-  line-height: 1.2;
   background: linear-gradient(90deg, #00e676, #1de9b6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -47,8 +46,7 @@ header {
   transition: background 0.3s;
 }
 
-.menu a:hover,
-.menu a.active {
+.menu a:hover {
   background: #28a745;
 }
 
@@ -80,14 +78,6 @@ header {
   width: 20px;
   height: 20px;
   filter: invert(1);
-}
-
-.category-title {
-  font-size: 28px;
-  margin: 30px auto 20px;
-  color: #1e1e2f;
-  text-align: center;
-  font-weight: 600;
 }
 
 .game-grid {
@@ -130,6 +120,15 @@ header {
 
 .download-btn:hover {
   background: #218838;
+}
+
+.category-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  color: #1e1e2f;
+  text-align: center;
+  font-weight: 600;
 }
 
 footer {
