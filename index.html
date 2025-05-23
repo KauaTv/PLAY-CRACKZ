@@ -1,84 +1,78 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PLAY CRACKZ</title>
-<link href="style.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAY CRACKZ</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
-<h1 class="site-title">PLAY<br/>CRACKZ</h1>
-<nav class="menu">
-<a href="#home-section">Início</a>
-<a href="#games-category">Jogos</a>
-<a href="#apps-category">Apps</a>
-</nav>
-<div class="search-box">
-<input id="searchInput" onkeyup="filterContent()" placeholder="Buscar jogos ou apps..." type="text"/>
-<button onclick="filterContent()">
-<img alt="Buscar" src="https://cdn-icons-png.flaticon.com/512/54/54481.png"/>
-</button>
-</div>
+  <h1 class="site-title">PLAY CRACKZ</h1>
+  <nav class="menu">
+    <a href="#games-category">Jogos</a>
+    <a href="#apps-category">Apps</a>
+  </nav>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterGames()">
+    <button onclick="filterGames()">
+      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar">
+    </button>
+  </div>
 </header>
+
 <main>
-<section id="home-section">
-<h2 class="category-title">!</h2>
-<p>Explore nossas abas de Jogos e Apps para baixar seus favoritos.</p>
-</section>
-<section id="games-category" style="display:none;">
-<div class="game-grid">
-<!-- Game cards here -->
-<div class="game-card" data-category="jogos">
-<img alt="Subway Surfers" src="https://static.download.it/gen/android/subway-surfers-100x100.png"/>
-<h2>SUBWAY SURFERS</h2>
-<p>Corra como nunca antes! Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
-<a class="download-btn" href="https://drive.google.com/file/d/1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW/view?usp=drivesdk" target="_blank">Baixar</a>
-</div><div class="game-card" data-category="jogos">
-<img alt="Zombie Tsunami" src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200"/>
-<h2>ZOMBIE TSUNAMI</h2>
-<p>Recursos infinitos, todos os bônus insanos desbloqueados e nenhuma interrupção. Conduza sua horda de zumbis!</p>
-<a class="download-btn" href="https://drive.google.com/file/d/1_gO1Ai_vwwYAPdtddnv3-RhaeCZjXRyB/view?usp=drivesdk" target="_blank">Baixar</a>
-</div></div>
-</section>
-<section id="apps-category" style="display:none;">
-<div class="game-grid">
-<!-- App cards here -->
-<div class="game-card" data-category="apps">
-<img alt="App Exemplo" src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp"/>
-<h2>RIMUSIC</h2>
-<p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
-<a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
-</div></div>
-</section>
+  <section id="games-category">
+    <h2 class="category-title">Jogos</h2>
+    <div class="game-grid">
+      <div class="game-card" data-category="jogos">
+        <img src="https://static.download.it/gen/android/subway-surfers-100x100.png" alt="Subway Surfers">
+        <h2>SUBWAY SURFERS</h2>
+        <p>Corra como nunca antes! Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
+        <a class="download-btn" href="https://drive.google.com/file/d/1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW/view?usp=drivesdk" target="_blank">Baixar</a>
+      </div>
+      <div class="game-card" data-category="jogos">
+        <img src="https://img.utdstc.com/icon/225/579/225579ba8522de019fc44dddf4cfb56c5dd9eb01a29ea1a813db98b8ca3453cc:200" alt="Zombie Tsunami">
+        <h2>ZOMBIE TSUNAMI</h2>
+        <p>Recursos infinitos, todos os bônus insanos desbloqueados e nenhuma interrupção. Conduza sua horda de zumbis!</p>
+        <a class="download-btn" href="https://drive.google.com/file/d/1_gO1Ai_vwwYAPdtddnv3-RhaeCZjXRyB/view?usp=drivesdk" target="_blank">Baixar</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="apps-category">
+    <h2 class="category-title">Apps</h2>
+    <div class="game-grid">
+      <div class="game-card" data-category="apps">
+        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="App Exemplo">
+        <h2>RIMUSIC</h2>
+        <p>O aplicativo RiMusic é um reprodutor de música gratuito e de código aberto que reproduz músicas do YouTube Music! Baixe o RiMusic APK para ouvir músicas gratuitamente.</p>
+        <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer>
-<p>© 2025 PLAY CRACKZ — Todos os direitos reservados.</p>
+  <p>© 2025 PLAY CRACKZ — Todos os direitos reservados.</p>
 </footer>
+
 <script>
-function showSection(id) {
-  document.getElementById('home-section').style.display = id==='home-section'?'block':'none';
-  document.getElementById('games-category').style.display = id==='games-category'?'block':'none';
-  document.getElementById('apps-category').style.display = id==='apps-category'?'block':'none';
-}
-document.querySelectorAll('.menu a').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    showSection(link.getAttribute('href').substring(1));
-  });
-});
-function filterContent(){
-  const input=document.getElementById('searchInput').value.toLowerCase();
-  const active= document.getElementById(document.querySelector('.menu a.active')?.getAttribute('href').substring(1) || 'home-section');
-  const cards=active.querySelectorAll('.game-card')||[];
-  cards.forEach(card=>{
-    const title=card.querySelector('h2').textContent.toLowerCase();
-    const desc=card.querySelector('p').textContent.toLowerCase();
-    card.style.display=(title.includes(input)||desc.includes(input))?'block':'none';
+function filterGames() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.game-card');
+
+  cards.forEach(card => {
+    const title = card.querySelector('h2').textContent.toLowerCase();
+    const description = card.querySelector('p').textContent.toLowerCase();
+    const show = title.includes(input) || description.includes(input);
+    card.style.display = show ? 'block' : 'none';
   });
 }
 </script>
+
 </body>
 </html>
