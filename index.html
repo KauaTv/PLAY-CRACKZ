@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLAY CRACKZ</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 </header>
 
 <main>
-  <section id="games-category">
+  <section id="games-category" style="display: none;">
     <h2 class="category-title">Jogos</h2>
     <div class="game-grid">
       <div class="game-card" data-category="jogos">
@@ -43,7 +43,7 @@
     </div>
   </section>
 
-  <section id="apps-category">
+  <section id="apps-category" style="display: none;">
     <h2 class="category-title">Apps</h2>
     <div class="game-grid">
       <div class="game-card" data-category="apps">
@@ -74,5 +74,20 @@ function filterGames() {
 }
 </script>
 
+
+<script>
+document.querySelector('a[href="#games-category"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('games-category').style.display = 'block';
+  document.getElementById('apps-category').style.display = 'none';
+});
+
+document.querySelector('a[href="#apps-category"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('apps-category').style.display = 'block';
+  document.getElementById('games-category').style.display = 'none';
+});
+</script>
 </body>
+
 </html>
