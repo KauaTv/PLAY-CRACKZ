@@ -13,8 +13,8 @@
 <header>
   <h1 class="site-title">PLAY CRACKZ</h1>
   <nav class="menu">
-    <a href="#" onclick="showCategory('games')">Jogos</a>
-    <a href="#" onclick="showCategory('apps')">Apps</a>
+    <a href="#games-category">Jogos</a>
+    <a href="#apps-category">Apps</a>
   </nav>
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterGames()">
@@ -43,7 +43,7 @@
     </div>
   </section>
 
-  <section id="apps-category" style="display:none;">
+  <section id="apps-category">
     <h2 class="category-title">Apps</h2>
     <div class="game-grid">
       <div class="game-card" data-category="apps">
@@ -63,8 +63,7 @@
 <script>
 function filterGames() {
   const input = document.getElementById('searchInput').value.toLowerCase();
-  const visibleSection = document.querySelector('section:not([style*="display: none"])');
-  const cards = visibleSection.querySelectorAll('.game-card');
+  const cards = document.querySelectorAll('.game-card');
 
   cards.forEach(card => {
     const title = card.querySelector('h2').textContent.toLowerCase();
@@ -72,12 +71,6 @@ function filterGames() {
     const show = title.includes(input) || description.includes(input);
     card.style.display = show ? 'block' : 'none';
   });
-}
-
-function showCategory(category) {
-  document.getElementById('games-category').style.display = category === 'games' ? 'block' : 'none';
-  document.getElementById('apps-category').style.display = category === 'apps' ? 'block' : 'none';
-  filterGames(); // Refresh search results when switching
 }
 </script>
 
