@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background: #f7f7f7;
   color: #333;
   padding: 20px;
@@ -140,4 +140,14 @@ footer {
   border-radius: 12px;
   font-size: 14px;
   box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+}
+
+.intro-choice {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.intro-choice h2 {
+  font-size: 24px;
+  color: #1e1e2f;
 }
