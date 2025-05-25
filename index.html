@@ -2,13 +2,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLAY CRACKZ</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -66,50 +64,47 @@
 </main>
 
 
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 PLAY CRACKZ. Todos os direitos reservados.</p>
-    <p><a href="politica.html">Política de Privacidade</a> | <a href="#">Contato</a></p>
-  </div>
+<footer style="background-color:#131124; padding: 20px; text-align: center; color: white; border-radius: 20px;">
+  <p>© 2025 PLAY CRACKZ. Todos os direitos reservados.</p>
+  <p><a href="politica.html" style="color: blue;">Política de Privacidade</a> | <a href="contato.html" style="color: blue;">Contato</a></p>
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="margin-top: 10px; padding: 10px 20px; border: none; border-radius: 10px; background-color: #282644; color: white; cursor: pointer;">Voltar ao Topo</button>
 </footer>
 
 
-
-
 <script>
-  const topoBtn = document.querySelector('.btn-topo');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      topoBtn.style.opacity = '1';
-      topoBtn.style.pointerEvents = 'auto';
-    } else {
-      topoBtn.style.opacity = '0';
-      topoBtn.style.pointerEvents = 'none';
-    }
+function filterGames() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.game-card');
+
+  cards.forEach(card => {
+    const title = card.querySelector('h2').textContent.toLowerCase();
+    const description = card.querySelector('p').textContent.toLowerCase();
+    const show = title.includes(input) || description.includes(input);
+    card.style.display = show ? 'block' : 'none';
   });
+}
 </script>
 
-<!-- Botão de voltar ao topo -->
-<button onclick="topFunction()" id="topBtn" title="Voltar ao topo">&#8679;</button>
+
 <script>
-  var mybutton = document.getElementById("topBtn");
-  window.onscroll = function() {scrollFunction();};
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+function showSection(id) {
+  document.getElementById('games-category').style.display = 'none';
+  document.getElementById('apps-category').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+}
+
+document.querySelector('a[href="#games-category"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  showSection('games-category');
+});
+
+document.querySelector('a[href="#apps-category"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  showSection('apps-category');
+});
+
+showSection('games-category'); // Exibe jogos por padrão
 </script>
-
 </body>
-
-
 
 </html>
