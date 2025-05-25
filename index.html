@@ -105,6 +105,52 @@ document.querySelector('a[href="#apps-category"]').addEventListener('click', fun
 
 showSection('games-category'); // Exibe jogos por padrão
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+  const gameCards = document.querySelectorAll(".game-card");
+  const gamesSection = document.getElementById("games-category");
+  const appsSection = document.getElementById("apps-category");
+
+  // Criar a seção de apps se não existir
+  if (!appsSection) {
+    const newSection = document.createElement("section");
+    newSection.id = "apps-category";
+    newSection.style.display = "none";
+    newSection.innerHTML = '<h2 class="category-title">Apps</h2><div class="game-grid"></div>';
+    gamesSection.parentNode.insertBefore(newSection, gamesSection.nextSibling);
+
+    // Mover cards de apps para a nova seção
+    document.querySelectorAll('.game-card[data-category="apps"]').forEach(card => {
+      newSection.querySelector(".game-grid").appendChild(card);
+    });
+  }
+
+  // Função de busca
+  window.filterGames = function () {
+    const filter = searchInput.value.toLowerCase();
+    gameCards.forEach(card => {
+      const title = card.querySelector("h2").textContent.toLowerCase();
+      card.style.display = title.includes(filter) ? "block" : "none";
+    });
+  };
+
+  // Alternância entre abas
+  document.querySelector('a[href="#games-category"]').addEventListener("click", function (e) {
+    e.preventDefault();
+    gamesSection.style.display = "block";
+    appsSection.style.display = "none";
+  });
+
+  document.querySelector('a[href="#apps-category"]').addEventListener("click", function (e) {
+    e.preventDefault();
+    gamesSection.style.display = "none";
+    appsSection.style.display = "block";
+  });
+});
+</script>
+
 </body>
 
 </html>
