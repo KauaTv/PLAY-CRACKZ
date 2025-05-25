@@ -274,3 +274,27 @@ body {
 .site-footer a:hover {
     text-decoration: underline;
 }
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.site-footer {
+    background: #141225;
+    color: white;
+    padding: 25px 10px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 20px;
+    margin: 40px 20px 0 20px;
+}
+
+.site-footer a {
+    color: #1e90ff;
+    text-decoration: none;
+    margin: 0 6px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
