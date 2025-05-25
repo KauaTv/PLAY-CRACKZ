@@ -2,114 +2,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PLAY CRACKZ</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: sans-serif; margin: 0; background: #fff; color: #111; }
+    header, footer { background: #111; color: white; padding: 1rem; text-align: center; }
+    .app { margin: 2rem auto; max-width: 500px; padding: 1rem; background: #f9f9f9; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .app img { width: 100px; display: block; margin: auto; }
+    .app button { background: green; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
+    .contact { background: #111; color: white; padding: 2rem; text-align: center; }
+    .contact input, .contact textarea { width: 90%; padding: 0.5rem; margin: 0.5rem 0; border-radius: 5px; border: none; }
+    .contact button { background: teal; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; }
+    .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #111; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.5rem; cursor: pointer; }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>PLAY CRACKZ</h1>
+  </header>
 
-<header>
-  <h1 class="site-title">PLAY<br>CRACKZ</h1>
-  <nav class="menu">
-    <a href="#games-category">Jogos</a>
-    <a href="#apps-category">Apps</a>
-  </nav>
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Buscar jogos ou apps..." onkeyup="filterGames()">
-    <button onclick="filterGames()">
-      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar">
-    </button>
+  <div class="app">
+    <img src="icon.png" alt="App Icon">
+    <h2>PLANTS VS ZOMBIES™ 2</h2>
+    <p>Prepare-se para ação sem limites! Com recursos infinitos, plantas poderosas e nenhuma interrupção.</p>
+    <button>Baixar</button>
   </div>
-</header>
 
+  <div id="contato" class="contact">
+    <h2>Contato</h2>
+    <input type="text" placeholder="Seu nome (opcional)" />
+    <textarea rows="4" placeholder="Sua mensagem"></textarea>
+    <br/>
+    <button onclick="location.href='mailto:PlayCrackzz@gmail.com'">Enviar</button>
+  </div>
 
-<main>
-  <section id="games-category" style="display:block;">
-    <h2 class="category-title">Jogos</h2>
-    <div class="game-grid">
-      <div class="game-card" data-category="jogos">
-        <img src=https://play-lh.googleusercontent.com/7XhuH3jCxk8ledQ77YBsqthLVgDgAtiVP86b92_6Ljk6JJ7BUwDxidVscphfuAv05Ss=w480-h960-rw alt="Subway Surfers">
-        <h2>SUBWAY SURFERS</h2>
-        <p>Corra como nunca antes! Com moedas e chaves infinitas, todos os personagens e pranchas liberados e zero anúncios.</p>
-        <a class="download-btn" href=https://drive.google.com/uc?export=download&id=1cC9vLr-tRQme1UmZcqrEVoVPGHRgMHTW target="_blank">Baixar</a>
-      </div>
-      <div class="game-card" data-category="jogos">
-        <img src=https://play-lh.googleusercontent.com/orKIEE8HVueEHzaq1P9GEI-MbTJh5jkcRZnWUrHJoKrzMPzrSzYPY625sweqsWOSZHs=w480-h960-rw>
-        <h2>PLANTS VS ZOMBIES™ 2
+  <footer>
+    <p>© 2025 PLAY CRACKZ - Todos os direitos reservados.</p>
+  </footer>
 
-</h2>
-        <p>Prepare-se para ação sem limites! Com recursos infinitos, plantas poderosas e nenhuma interrupção, a diversão é garantida do começo ao fim!
-
-</p>
-        <a class="download-btn" href=https://drive.google.com/file/d/1R2bJnPMkHv-JnIzJmUJKxP9ZS8zgrRw0/view?usp=drivesdk>Baixar</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="apps-category" style="display:none;">
-    <h2 class="category-title">Apps</h2>
-    <div class="game-grid">
-      <div class="game-card" data-category="apps">
-        <img src="https://rimusicapp.com/wp-content/uploads/2024/11/cropped-rimusic.webp" alt="App Exemplo">
-        <h2>RIMUSIC</h2>
-        <p>RiMusic é um app gratuito e de código aberto que toca músicas direto do YouTube Music. Curta suas faixas favoritas sem pagar nada!
-
-</p>
-        <a class="download-btn" href="https://drive.google.com/file/d/133CqIl4CVCySzr-SayL9HCTfXPaImva4/view?usp=drivesdk" target="_blank">Baixar</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-
-
-<script>
-function filterGames() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const cards = document.querySelectorAll('.game-card');
-
-  cards.forEach(card => {
-    const title = card.querySelector('h2').textContent.toLowerCase();
-    const description = card.querySelector('p').textContent.toLowerCase();
-    const show = title.includes(input) || description.includes(input);
-    card.style.display = show ? 'block' : 'none';
-  });
-}
-</script>
-
-
-<script>
-function showSection(id) {
-  document.getElementById('games-category').style.display = 'none';
-  document.getElementById('apps-category').style.display = 'none';
-  document.getElementById(id).style.display = 'block';
-}
-
-document.querySelector('a[href="#games-category"]').addEventListener('click', function(e) {
-  e.preventDefault();
-  showSection('games-category');
-});
-
-document.querySelector('a[href="#apps-category"]').addEventListener('click', function(e) {
-  e.preventDefault();
-  showSection('apps-category');
-});
-
-showSection('games-category'); // Exibe jogos por padrão
-</script>
-
-<footer style="background:#111;color:white;padding:30px;text-align:center;">
-  <h3>Contato</h3>
-  <form action="https://formsubmit.co/PlayCrackzz@gmail.com" method="POST" style="max-width:400px;margin:auto;">
-    <input type="text" name="name" placeholder="Seu nome (opcional)" style="width:100%;padding:10px;margin:5px 0;"><br>
-    <textarea name="message" placeholder="Sua mensagem" required style="width:100%;padding:10px;margin:5px 0;height:100px;"></textarea><br>
-    <button type="submit" style="background:#00b894;color:white;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;">Enviar</button>
-  </form>
-  <p style="margin-top:15px;">&copy; 2025 PLAY CRACKZ - Todos os direitos reservados.</p>
-</footer>
-
+  <button class="back-to-top" onclick="scrollTo(0,0)">↑</button>
 </body>
-
 </html>
