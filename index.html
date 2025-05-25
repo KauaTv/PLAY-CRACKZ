@@ -102,32 +102,20 @@ document.querySelector('a[href="#apps-category"]').addEventListener('click', fun
 showSection('games-category'); // Exibe jogos por padrão
 </script>
 
-<!-- Novo Rodapé Profissional -->
-<footer style="background:#111; color:#ccc; text-align:center; padding:20px; margin-top:40px;">
-    <p>&copy; 2025 PLAY CRACKZ. Todos os direitos reservados.</p>
-    <p><strong>Contato:</strong> (em breve)</p>
+<footer class="footer">
+  <p>© 2025 PLAY CRACKZ. Todos os direitos reservados.</p>
+  <p>
+    <a href="privacidade.html">Política de Privacidade</a> |
+    <a href="contato.html">Contato</a>
+  </p>
 </footer>
 
-<!-- Botão Voltar ao Topo -->
-<button onclick="topFunction()" id="topBtn" title="Voltar ao topo">↑</button>
+<button onclick="scrollToTop()" class="btn-topo" title="Voltar ao topo">↑</button>
 
 <script>
-// Mostrar o botão ao chegar perto do final da página
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    const btn = document.getElementById("topBtn");
-    if (document.documentElement.scrollTop > document.documentElement.scrollHeight * 0.5) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-}
-
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 </script>
 
 </body>
