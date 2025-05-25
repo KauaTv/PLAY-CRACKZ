@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PLAY CRACKZ</title>
+  <title>PLAY CRACKZ - Baixe Jogos e Apps Modificados</title>
+  <meta name="description" content="Baixe jogos e aplicativos modificados diretamente no seu celular com links diretos.">
+  <meta name="keywords" content="jogos, apps, apk, modificados, crack, download">
+  <meta name="author" content="PLAY CRACKZ">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
@@ -61,6 +64,8 @@
       </div>
     </div>
   </section>
+
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">&#8679;</button>
 </main>
 
 <footer>
@@ -79,6 +84,15 @@ function filterGames() {
     card.style.display = show ? 'block' : 'none';
   });
 }
+
+window.onscroll = function () {
+  const btn = document.getElementById("backToTop");
+  if (document.documentElement.scrollTop > 300) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
 </script>
 
 
@@ -100,7 +114,23 @@ document.querySelector('a[href="#apps-category"]').addEventListener('click', fun
 });
 
 showSection('games-category'); // Exibe jogos por padrão
+
+window.onscroll = function () {
+  const btn = document.getElementById("backToTop");
+  if (document.documentElement.scrollTop > 300) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
 </script>
+
+<footer class="footer">
+  <p>&copy; 2025 PLAY CRACKZ. Todos os direitos reservados.</p>
+  <nav>
+    <a href="#">Política de Privacidade</a> | <a href="#">Contato</a>
+  </nav>
+</footer>
 </body>
 
 </html>
