@@ -195,3 +195,82 @@ footer {
 .btn-topo:hover {
   background-color: #1f1b38;
 }
+
+
+.btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #6e00ff, #9b00ff);
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px #00000088;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 1000;
+}
+
+.btn-topo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px #000000aa;
+}
+
+
+.btn-topo {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.btn-topo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #6e00ff, #9b00ff);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px #00000088;
+  transition: opacity 0.3s ease, transform 0.2s;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-topo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px #000000aa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.site-footer {
+    background: #111;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.site-footer a {
+    color: #4fc3f7;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
